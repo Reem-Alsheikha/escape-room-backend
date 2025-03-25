@@ -9,10 +9,10 @@ app.use(cors());
 
 // MongoDB Verbindung
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("🔥 MongoDB verbunden"))
+  .then(() => console.log("MongoDB verbunden"))
   .catch(err => console.error(err));
 
-// Routen einbinden (diese erstellen wir gleich)
+// Routen einbinden
 const roomRoutes = require('./routes/roomRoutes');
 app.use('/api/rooms', roomRoutes);
 
@@ -24,7 +24,7 @@ app.use('/api/customers', customerRoutes);
 
 // Server starten
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server läuft auf Port ${PORT}`));
+app.listen(PORT, () => console.log(`Server läuft auf Port ${PORT}`));
 
 
 
